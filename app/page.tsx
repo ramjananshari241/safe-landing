@@ -31,7 +31,7 @@ export default function Home() {
               {/* 新增：绿色安全盾牌，带一点文字提示 */}
               <div className="flex items-center bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 ml-1">
                 <ShieldCheck size={14} className="text-emerald-600 fill-emerald-600/20" />
-                <span className="text-[10px] font-bold text-emerald-700 ml-1 uppercase">Secure</span>
+                <span className="text-[10px] font-bold text-emerald-700 ml-1 uppercase"></span>
               </div>
             </div>
 
@@ -58,7 +58,7 @@ export default function Home() {
           </h1>
 
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            为您提供银行级安全托管。支持多币种结算、实时风控拦截，助您轻松拓展全球业务，资金流转合规透明。
+            为您提供资金安全托管及交易担保。支持多币种结算、实时监控、安全代收，助您轻松拓展全球业务。
           </p>
           
           <div className="w-16 h-1 bg-blue-600 mx-auto rounded-full opacity-20"></div>
@@ -72,7 +72,7 @@ export default function Home() {
             <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mb-5">
               <ShieldCheck size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-3">金融级合规托管</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-3">金融级托管</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               持牌机构资金存管，全链路 SSL 加密，每一笔交易都清晰可查，保障资金绝对安全。
             </p>
@@ -82,9 +82,9 @@ export default function Home() {
             <div className="w-12 h-12 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 mb-5">
               <Globe size={24} />
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-3">全球本地化结算</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-3">本地化结算</h3>
             <p className="text-slate-500 text-sm leading-relaxed">
-              支持支付宝、微信、信用卡及 Web3 支付。一键接入全球主流支付方式，覆盖 200+ 国家。
+              支持支付宝、微信、信用卡及 Web3 等多种支付方式。
             </p>
           </div>
 
@@ -107,20 +107,20 @@ export default function Home() {
           <div className="flex-1 pt-4">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">立即接入 AntPal</h2>
             <p className="text-slate-600 mb-8">
-              留下您的联系方式，我们的商务经理将在 10 分钟内与您联系。
+              留下您的联系方式，我们将在 10 分钟内与您联系。
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle2 size={20} className="text-blue-600" />
-                <span className="text-slate-700 font-medium">免费开通企业测试账户</span>
+                <span className="text-slate-700 font-medium">无门槛对接与支持</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 size={20} className="text-blue-600" />
-                <span className="text-slate-700 font-medium">新户首月费率优惠</span>
+                <span className="text-slate-700 font-medium">平台合作费率优惠</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle2 size={20} className="text-blue-600" />
-                <span className="text-slate-700 font-medium">7x24h 1对1 技术集成支持</span>
+                <span className="text-slate-700 font-medium">多模态技术集成</span>
               </div>
             </div>
           </div>
