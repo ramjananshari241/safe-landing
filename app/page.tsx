@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ShieldCheck, Globe, CreditCard, CheckCircle2, ArrowRight, X, Building2 } from "lucide-react";
+// 引入 Shield (实心盾牌)
+import { ShieldCheck, Globe, CreditCard, CheckCircle2, ArrowRight, X, Building2, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white relative flex flex-col font-sans text-slate-800">
       
-      {/* --- 顶部导航栏 --- */}
+      {/* --- 顶部导航栏 (已更新：增加绿色安全盾) --- */}
       <nav className="w-full px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-100">
         <div className="max-w-6xl mx-auto w-full flex items-center">
           <div className="flex items-center gap-2">
@@ -24,17 +25,24 @@ export default function Home() {
             <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-white shadow-sm">
               AP
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">AntPal</span>
+            
+            <div className="flex items-center gap-1">
+              <span className="font-bold text-xl tracking-tight text-slate-900">AntPal</span>
+              {/* 新增：绿色安全盾牌，带一点文字提示 */}
+              <div className="flex items-center bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 ml-1">
+                <ShieldCheck size={14} className="text-emerald-600 fill-emerald-600/20" />
+                <span className="text-[10px] font-bold text-emerald-700 ml-1 uppercase">Secure</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </nav>
 
-      {/* --- 1. Hero 区域：紧凑、明亮、商务 --- */}
-      {/* pt-20 pb-12 控制高度，让它不那么巨大 */}
+      {/* --- 1. Hero 区域 --- */}
       <section className="pt-20 pb-16 px-6 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
           
-          {/* 标语 Badge */}
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +52,6 @@ export default function Home() {
             AntPal 一站式支付增长与数字化解决方案
           </motion.div>
 
-          {/* 大标题：深灰 + 蓝 */}
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
             连接全球商业的<br />
             <span className="text-blue-600">数字支付引擎</span>
@@ -54,15 +61,13 @@ export default function Home() {
             为您提供银行级安全托管。支持多币种结算、实时风控拦截，助您轻松拓展全球业务，资金流转合规透明。
           </p>
           
-          {/* 简单的分割线 */}
           <div className="w-16 h-1 bg-blue-600 mx-auto rounded-full opacity-20"></div>
         </div>
       </section>
 
-      {/* --- 2. 核心能力展示 (白色卡片) --- */}
+      {/* --- 2. 核心能力展示 --- */}
       <section className="px-6 pb-20 max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-3 gap-6">
-          {/* 卡片 1 */}
           <div className="light-card p-8 rounded-xl">
             <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mb-5">
               <ShieldCheck size={24} />
@@ -73,7 +78,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 卡片 2 */}
           <div className="light-card p-8 rounded-xl">
             <div className="w-12 h-12 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 mb-5">
               <Globe size={24} />
@@ -84,7 +88,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 卡片 3 */}
           <div className="light-card p-8 rounded-xl">
             <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 mb-5">
               <CreditCard size={24} />
@@ -97,11 +100,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- 3. 联系我们 (浅灰背景区分) --- */}
+      {/* --- 3. 联系我们 --- */}
       <section className="bg-slate-50 w-full py-16 px-6 border-t border-slate-200">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-start">
           
-          {/* 左侧说明 */}
           <div className="flex-1 pt-4">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">立即接入 AntPal</h2>
             <p className="text-slate-600 mb-8">
@@ -123,7 +125,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 右侧表单 (白底卡片) */}
           <div className="flex-1 w-full bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -173,7 +174,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* --- 提交成功弹窗 (Light Mode) --- */}
+      {/* --- 提交成功弹窗 --- */}
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
           <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setShowModal(false)} />
@@ -185,23 +186,19 @@ export default function Home() {
             <button onClick={() => setShowModal(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
               <X size={20} />
             </button>
-            
             <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 size={36} className="text-green-600" />
             </div>
-            
             <h3 className="text-xl font-bold text-slate-900 mb-2">提交成功</h3>
             <p className="text-slate-500 text-sm mb-6">
               您的需求已收到。我们的商务团队将尽快与您联系，请保持电话畅通。
             </p>
-            
             <button onClick={() => setShowModal(false)} className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 py-3 rounded-lg text-sm transition font-semibold">
               关闭
             </button>
           </motion.div>
         </div>
       )}
-
     </main>
   );
 }
